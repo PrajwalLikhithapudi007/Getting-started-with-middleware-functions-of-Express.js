@@ -90,7 +90,7 @@ app.get("/profile/", authenticateToken, async (request, response) => {
       FROM
        user 
       WHERE
-       username = ${username};
+       username = '${username}';
     `;
     const dbUser = await db.get(selectUserQuery);
     response.send(dbUser);
